@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Every Day Remind</string>
+    <string name="action_settings">Настройки</string>
+    <string name="date">Дата</string>
+    <string name="title">Заголовок</string>
+    <string name="notitle">Нет заголовка</string>
+    <string name="time">Время</string>
+    <string name="remain">Осталось:</string>
+    <string name="after">Прошло:</string>
+    <string name="info">Описание</string>
+    <string name="noinfo">Нет описания</string>
+    <string name="repeat">Повторять каждые  </string>
+    <string name="repeatoff">Повтор выкл.</string>
+    <string name="before">заранее  </string>
+    <string name="beforeoff">заранее выкл.</string>
+    <string name="zero">0</string>
+    <string name="days">дн. </string>
+    <string name="hours">час. </string>
+    <string name="minutes">мин. </string>
+    <string name="seconds">сек. </string>
+    <string name="today">Сегодня:</string>
+    <string name="todayevents">Событий сегодня:</string>
+    <string name="todayreminders">Сегодня напоминаний:</string>
+    <string name="totalevents">Всего событий:</string>
+	<string name="active">Активно</string>
+	<string name="str_selectrington">Выбрать рингтон</string>
+	
+    <color name="red">#FF0000</color>
+    <color name="green">#1BE200</color>
+    <color name="yellow">#FDFA01</color>
+    <color name="black">#000000</color>
+
+    <string name="addevent">Добавить событие</string>
+    <string name="deleteevents">Удалить события</string>
+    <string name="deleteevent">Удалить событие</string>
+    <string name="addtitleandinfo">Добавьте заголовок и описание</string>
+    <string name="addcorrectbefore">Введите корректное время заранее</string>
+    <string name="dialogcancel">Отмена</string>
+    <string name="dialogok">OK</string>
+    <string name="edititem">Редактировать событие</string>
+
+    <!-- Repeat types -->
+    <string-array name="repeattypes">
+        <item>мин.</item>
+        <item>час.</item>
+        <item>дн.</item>
+        <item>нед.</item>
+        <item>мес.</item>
+    </string-array>
+
+</resources>

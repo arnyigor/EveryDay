@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" >
+
+	<LinearLayout
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical" >
+
+		<TextView
+		    android:id="@+id/tvTimeItem"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_margin="2dp"
+		    android:hint="@string/time"
+		    android:textSize="22sp" />
+
+		<TextView
+		    android:id="@+id/tvDateItem"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_margin="2dp"
+		    android:hint="@string/date"
+		    android:textSize="22sp" />
+
+	</LinearLayout>
+
+	<LinearLayout
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical" >
+
+		<TextView
+		    android:id="@+id/tvTitleItem"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:gravity="center"
+		    android:maxEms="10"
+		    android:text="@string/title"
+		    android:textSize="20sp" />
+
+	    <TextView
+	        android:id="@+id/tvRepeatViewItem"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginRight="2dp"
+	        android:text="@string/repeat"
+	        android:textSize="18sp" />
+
+	    <TextView
+	        android:id="@+id/tvBeforeItem"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginRight="2dp"
+	        android:text="@string/beforeoff"
+	        android:textSize="18sp" />
+	</LinearLayout>
+
+</LinearLayout>
+
