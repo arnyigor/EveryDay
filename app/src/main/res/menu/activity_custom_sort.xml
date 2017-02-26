@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".views.activities.CustomSortActivity">
+    <item 
+        android:id="@+id/menu_custom_sort_help"
+        android:title="@string/menu_help"
+        app:showAsAction="never"
+        android:orderInCategory="0"/>
+    
+</menu>
