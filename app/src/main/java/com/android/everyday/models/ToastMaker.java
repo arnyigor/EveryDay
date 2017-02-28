@@ -26,6 +26,8 @@ import android.content.Context;
 import android.text.format.DateFormat;
 import android.widget.Toast;
 
+import es.dmoral.toasty.Toasty;
+
 /**
  * Helper class that provides methods to build Strings used in Toast notifications
  * in various activities.
@@ -37,7 +39,7 @@ public class ToastMaker {
 		Calendar current_date = GregorianCalendar.getInstance();
 		StringBuilder message = new StringBuilder();
 		message.append(context.getString(resId));
-		
+
 		if (cal.get(Calendar.YEAR) > current_date.get(Calendar.YEAR)) {
 			// Due date is in a future year
 			message.append(DateFormat.format(" MMMM d, yyyy'.'", cal));
@@ -51,10 +53,10 @@ public class ToastMaker {
 			// Due date is today
 			message.append(DateFormat.format(" 'today at' h:mmaa'.'", cal));
 		}
-		
+
 		return message.toString();
 	}
-	
+
 	/**
 	 * Displays a Toast notification for a short duration.
 	 * @param context
@@ -63,13 +65,44 @@ public class ToastMaker {
 	public static void toast(Context context, int resId) {
 		Toast.makeText(context, resId, Toast.LENGTH_SHORT).show();
 	}
-	
+
 	/**
 	 * Displays a Toast notification for a short duration.
 	 * @param context
-	 */
+	 * @param message
+     */
 	public static void toast(Context context, String message) {
 		Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
 	}
+
+    /**
+     * Displays a new Toast notification for a short duration.
+     *
+     * @param context
+     * @param resId
+     * @param error
+     */
+    public static void toast(Context context, int resId, boolean error) {
+        if (error) {
+            Toasty.error(context, context.getResources().getString(resId), Toast.LENGTH_SHORT).show();
+        } else {
+            Toasty.success(context, context.getResources().getString(resId), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    /**
+     * Displays a new Toast notification for a short duration.
+     *
+     * @param context
+     * @param message
+     * @param error
+     */
+    public static void toast(Context context, String message, boolean error) {
+        if (error) {
+            Toasty.error(context, message, Toast.LENGTH_SHORT).show();
+        } else {
+            Toasty.success(context, message, Toast.LENGTH_SHORT).show();
+        }
+    }
 
 }

@@ -58,7 +58,7 @@ public class TasksFragment extends Fragment {
         String name = "Test";
         // If there is no task name, don't create the task
         if (name.equals("")) {
-            ToastMaker.toast(context, R.string.toast_task_no_name);
+            ToastMaker.toast(context, R.string.toast_task_no_name,true);
             return false;
         }
 

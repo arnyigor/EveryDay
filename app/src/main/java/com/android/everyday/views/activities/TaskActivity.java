@@ -38,6 +38,7 @@ public class TaskActivity extends AppCompatActivity {
     private ImageView imageViewPriority, image_repeat, image_alarm;
     private LinearLayout due_date_bar;
     private View view_category;
+    private boolean modeEdit = false;//режим редактирования
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,18 +80,18 @@ public class TaskActivity extends AppCompatActivity {
         // Get the task from the intent
         int id = getIntent().getIntExtra(Task.EXTRA_TASK_ID, 0);
         if (id == 0) {
-            finish();
-            ToastMaker.toast(this, R.string.toast_error_no_task);
+            setModeEdit(false);
             return;
         }
         task = data_source.getTask(id);
         // Exit the task if it no longer exists (has been deleted)
         if (task == null) {
-            ToastMaker.toast(this, R.string.toast_error_no_task);
+            setModeEdit(false);
+            ToastMaker.toast(this, R.string.toast_error_no_task,true);
             finish();
             return;
         }
-        // Display the task
+        setModeEdit(modeEdit);
         displayTask();
     }
 
@@ -133,7 +134,7 @@ public class TaskActivity extends AppCompatActivity {
             alarm.cancelAlarm(context, task.getID());
             alarm.cancelNotification(context, task.getID());
             if (task.isCompleted()) {
-                ToastMaker.toast(context, R.string.toast_task_completed);
+                ToastMaker.toast(context, R.string.toast_task_completed,false);
                 if (task.isRepeating()) {
                     task = alarm.setRepeatingAlarm(context, task.getID());
                     if (!task.isCompleted()) {
@@ -208,5 +209,13 @@ public class TaskActivity extends AppCompatActivity {
         }
         // Set notes
         text_notes.setText(task.getNotes());
+    }
+
+    public boolean isModeEdit() {
+        return modeEdit;
+    }
+
+    public void setModeEdit(boolean modeEdit) {
+        this.modeEdit = modeEdit;
     }
 }

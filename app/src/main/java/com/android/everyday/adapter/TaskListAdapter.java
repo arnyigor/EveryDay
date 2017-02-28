@@ -159,7 +159,7 @@ public class TaskListAdapter extends ArrayAdapter<Task> {
                     alarm.cancelAlarm(context, task.getID());
                     alarm.cancelNotification(context, task.getID());
                     if (task.isCompleted()) {
-                        ToastMaker.toast(context, R.string.toast_task_completed);
+                        ToastMaker.toast(context, R.string.toast_task_completed,false);
                         if (task.isRepeating()) {
                             task = alarm.setRepeatingAlarm(context, task.getID());
 
