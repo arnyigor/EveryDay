@@ -35,9 +35,8 @@ public class TaskActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private TextView due_date, text_notes;
     private TaskActivity context;
-    private ImageView imageViewPriority, image_repeat, image_alarm;
+    private ImageView image_repeat, image_alarm;
     private LinearLayout due_date_bar;
-    private View view_category;
     private boolean modeEdit = false;//режим редактирования
 
     @Override
@@ -60,10 +59,8 @@ public class TaskActivity extends AppCompatActivity {
         name = (CheckedTextView) findViewById(R.id.text_view_task_name);
         due_date = (TextView) findViewById(R.id.text_date_due);
         text_notes = (TextView) findViewById(R.id.text_notes);
-        imageViewPriority = (ImageView) findViewById(R.id.image_priority);
         image_repeat = (ImageView) findViewById(R.id.image_repeat);
         image_alarm = (ImageView) findViewById(R.id.image_alarm);
-        view_category = findViewById(R.id.view_category);
         due_date_bar = (LinearLayout) findViewById(R.id.due_date_bar);
     }
 
@@ -162,9 +159,7 @@ public class TaskActivity extends AppCompatActivity {
         name.setChecked(task.isCompleted());
         name.setOnClickListener(nameOnClickListener);
         name.setTextColor(name.isChecked() ? Color.GRAY : Color.WHITE);
-
         action_bar.setTitle(R.string.title_activity_view_task);
-        view_category.setBackgroundColor(Color.parseColor("#33B5E5"));
 
         // Set due date
         if (task.hasDateDue()) {
